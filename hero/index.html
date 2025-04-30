@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instamove Hero</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://use.typekit.net/jbf6whm.css">
+    <style>
+        body {
+            margin: 0;
+        }
+        #hero {
+            font-family: 'massilia', sans-serif;
+            position: relative;
+            width: 100%;
+            height: 670px;
+        }
+
+        #hero .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #hero .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 60% 50%;
+        }
+
+        #hero h1 {
+            width: 80%;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 20px;
+            left: 54px;
+            color: #FF0059;
+            font-size: 160px;
+            line-height: 135px;
+        }
+
+        #hero h1 svg {
+            width: 150px;
+            height: auto;
+            color: #1E1D1C;
+            display: inline-block;
+            margin-top: -50px;
+        }
+
+        #hero h1 .newline {
+            display: flex;
+            gap: 15px;
+        }
+
+        .booking-bar {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 70px;
+            background: #FF0059;
+            padding: 0px 15px;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            max-width: 90%;
+            width: 1280px;
+            gap: 10px;
+        }
+
+        input {
+            border: 0;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            padding: 10px;
+            width: 40%;
+        }
+
+        button {
+            border: 0;
+            border-radius: 100px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            padding: 10px 20px;
+            background: #000;
+            color: #fff;
+            width: 20%;
+        }
+
+        @media (max-width: 1280px) {
+            #hero {
+                height: 550px;
+            }
+
+            #hero h1 {
+                font-size: 130px;
+                line-height: 110px;
+            }
+
+            #hero .background-image img {
+                object-position: 60% 50%;
+            }
+
+            #hero h1 svg {
+                width: 120px;
+                margin-top: -40px;
+            }
+        }
+
+
+        @media (max-width: 1024px) {
+            #hero {
+                height: 500px;
+            }
+
+            #hero h1 {
+                font-size: 120px;
+                line-height: 100px;
+            }
+
+            #hero .background-image img {
+                object-position: 60% 50%;
+            }
+
+            #hero h1 svg {
+                width: 100px;
+                margin-top: -30px;
+            }
+        }
+
+        @media (max-width: 950px) {
+            #hero {
+                height: 450px;
+            }
+
+            #hero h1 {
+                font-size: 100px;
+                line-height: 80px;
+            }
+
+            #hero .background-image img {
+                object-position: 60% 50%;
+            }
+
+            #hero h1 svg {
+                width: 80px;
+                margin-top: -20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #hero {
+                height: 400px;
+            }
+
+            #hero .background-image img {
+                object-position: 85% 50%;
+            }
+
+            #hero h1 {
+                font-size: 46px;
+                width: 100%;
+                left: 0;
+                right: 0;
+                bottom: 100px;
+                top: auto;
+                margin: 0 20px;
+                text-align: center;
+            }
+
+            #hero h1 .newline {
+                display: inline-flex;
+                margin-top: 0;
+            }
+
+            #hero h1 svg {
+                width: 50px;
+                margin-top: -10px;
+                color: #fff;
+            }
+
+            .booking-bar {
+                bottom: -80px;
+                flex-direction: column;
+                padding: 20px 30px;
+                height: fit-content;
+                border-radius: 18px;
+                width: calc(100% - 80px);
+            }
+
+            input, button {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="hero">
+        <div class="background-image">
+            <img src="/hero.png" alt="hero" />
+        </div>
+        <h1>
+            Move, just
+            <div class="newline">
+                like
+                <svg id="ok" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1144.4 1541.17">
+                    <path fill="currentColor" d="M1023.25,1308.21c-87.05,138.42-300.14,231.59-523.88,131.46-186.27-81.19-373.27-404.36-395.71-611.98-7.21-66.67,3.76-114.53,30.89-134.94,17.59-11.13,34.65-13.65,53.59-7.89,65.33,19.86,134.14,130.23,176.77,226.9l.85,1.9c5.89,13.09,20.17,20.06,33.95,16.51,13.77-3.53,23.07-16.53,22.1-30.88-13.06-192.62,112.4-475.78,212.1-538.67,36.53-23.03,60.82-14.44,76.01-5.66,59.02,39.16,29.11,175.6,7.22,242.57-45.07,1.27-89.82,25.37-130.74,70.93-39.77,44.28-73.11,105.8-93.9,173.22-41.26,133.83-19.8,243.75,54.71,280.05,13.08,6.35,29.96,11.64,49.86,11.64,12.94,0,27.16-2.29,42.44-7.92,12.95,29.59,33.6,52.05,61.15,65.74,12.51,6.19,29.05,11.49,49.04,11.48,10.46,0,21.89-1.52,34.15-5.05,8.5,19.51,21.47,35.61,38.73,47.37,32.59,21,99.72,40.83,182.97-62.33l1.6-1.98c10.43-12.6,8.79-31.36-3.66-41.92-12.44-10.55-30.98-8.89-41.39,3.71l-2.05,2.52c-28.6,35.42-70.18,72.79-105.29,50.2-22.5-15.34-25.24-46.43-23.58-69.82,5.38-75.57,62.22-167.25,121.63-196.2,29.52-14.37,56.28-12.73,81.8,5.03,72.85,50.71,66.79,249.94-11.38,374.01M811.46,729.26c-36.67,11.29-71.98,37.9-103.66,78.51-57.23,73.37-89.98,178.48-82.62,259.29-18.91,8.5-36.23,8.9-52.52.99-37.01-18.03-60.32-91.01-24.05-208.65,44.02-142.77,127.54-210.33,183.8-201.61.14.02.27.02.4.04,9.83,1.63,19.73,5.28,29.45,10.86,27.25,15.61,41.67,40.73,49.2,60.56M940.45,869.91c-4.37,1.68-8.74,3.5-13.08,5.62-78.42,38.2-147.85,148.36-154.78,245.56-.44,6.14-.57,12.11-.48,17.96-16.88,5.87-31.91,5.44-45.58-1.32-21.13-10.51-34.83-30.76-40.71-60.21-13.18-66.09,16.09-166.19,68.09-232.85,30.37-38.93,64.19-60.97,95.27-62.04,18.22-.77,36.66,6.15,54.47,20.21,19.49,15.47,30.96,43.93,36.81,67.07M1067.92,885.14c-21.63-15.06-45.17-23.31-69.39-24.74-6.93-29.82-22.95-76.09-58.69-104.45-21.56-17.03-44.27-27.44-67.87-31.23-8.8-30.92-30.11-78.81-80.77-107.82-5.21-2.98-10.51-5.51-15.85-7.82,22.91-71.49,64.12-240.83-34.25-304.61-.36-.23-.73-.46-1.11-.68-43.1-25.28-90.52-23.11-137.13,6.29-64.04,40.4-128.55,136.22-176.99,262.9-28.1,73.48-47.78,148.94-57.23,216.8-40.15-68.01-97.17-141.74-163.6-161.92-35.27-10.74-70.83-5.47-102.82,15.18-.47.31-.93.62-1.38.94-46.18,33.7-65.39,99.47-55.59,190.19,24.27,224.53,221.88,569.07,430.63,660.06,72.96,32.66,145.07,46.95,213.16,46.95,168.49,0,312.41-87.5,383.76-200.96,43.39-68.86,70.13-162.44,71.53-250.32,1.53-95.25-26.32-169.87-76.42-204.74"/>
+                    <path fill="currentColor" d="M228.9,525.48c13.34,0,25.41-9.26,28.58-22.97,3.71-16-6.1-32.02-21.9-35.76l-199.49-47.36c-15.8-3.78-31.61,6.18-35.31,22.18-3.71,16,6.1,32.02,21.9,35.76l199.49,47.36c2.25.54,4.51.8,6.73.8"/>
+                    <path fill="currentColor" d="M412.08,282.59c.82.07,1.63.1,2.44.1,15.13,0,27.99-11.76,29.25-27.32l18.17-223.19c1.34-16.37-10.7-30.74-26.87-32.1-16.04-1.24-30.37,10.84-31.7,27.22l-18.17,223.18c-1.34,16.37,10.7,30.75,26.87,32.1"/>
+                    <path fill="currentColor" d="M281.36,381.7c5.8,7.02,14.13,10.63,22.52,10.63,6.67,0,13.36-2.28,18.87-6.97,12.43-10.56,14.05-29.34,3.61-41.92l-145.62-175.75c-10.42-12.59-28.94-14.24-41.39-3.66-12.43,10.56-14.05,29.34-3.62,41.92l145.62,175.75Z"/>
+                </svg>
+            </div>
+        </h1>
+
+        <div class="booking-bar">
+            <input type="text" placeholder="Picking up from">
+            <input type="text" placeholder="Dropping off at">
+            <button>Instant Quote</button>
+        </div>
+    </div>
+</body>
+</html>

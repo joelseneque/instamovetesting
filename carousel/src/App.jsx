@@ -1,33 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import './Carousel.css'; // for your custom styles
+
+const images = [
+  'https://picsum.photos/id/1015/600/400',
+  'https://picsum.photos/id/1016/600/400',
+  'https://picsum.photos/id/1018/600/400',
+  'https://picsum.photos/id/1024/600/400',
+  'https://picsum.photos/id/1027/600/400',
+  'https://picsum.photos/id/1035/600/400',
+  'https://picsum.photos/id/1041/600/400',
+  'https://picsum.photos/id/1050/600/400',
+  'https://picsum.photos/id/1062/600/400',
+  'https://picsum.photos/id/1074/600/400',
+];
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+    <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+    <Swiper
+      slidesPerView={5}
+      centeredSlides={true}
+      loop={true}
+      spaceBetween={30}
+      watchSlidesProgress={true}
+      onProgress={(swiper) => {
+        swiper.slides.forEach((slide) => {
+          const progress = Math.abs(slide.progress);
+          const maxHeight = 300; // height of center slide
+          const minHeight = 180; // height of outer slides
+
+          const height = Math.max(maxHeight - progress * 80, minHeight);
+
+          const inner = slide.querySelector('.slide-inner');
+          if (inner) {
+            inner.style.height = `${height}px`;
+          }
+        });
+      }}
+    >
+      {images.map((url, i) => (
+        <SwiperSlide key={i}>
+          <div className="slide-inner">
+            <img src={url} alt={`Slide ${i + 1}`} />
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    </div>
     </>
   )
 }
